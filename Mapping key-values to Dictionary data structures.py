@@ -11,8 +11,8 @@ employee_list = [
 
 # Function to be passed to the map() function.
 def mod(employee_list):
-    pass_map = employee_list['name'] + "_" + employee_list["department"]
-    return pass_map
+    return_val = employee_list['name'] + "_" + employee_list["department"]
+    return return_val
 
 # This function Modifies the employee list of dictionaries into list of employee-department strings
 def to_mod_list(employee_list):
@@ -20,7 +20,6 @@ def to_mod_list(employee_list):
     map_employee_list = map(mod, employee_list)
     for x in map_employee_list:
         return_list.append(x)
-    string = ' '.join(map(str, list))
     return return_list
 
 
@@ -34,8 +33,7 @@ def generate_usernames(mod_list):
 
 # This function Maps employee id to first initial
 def map_id_to_initial(employee_list):
-
-    first_init = {employee_list["name"][0]: employee_list["id"] for employee_list in employee_list}
+    first_init = {employee["name"][0] : employee["id"] for employee in employee_list}
     return first_init
 
 
